@@ -2,7 +2,7 @@
 
 Compile:  
 ```bash
-g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o fuzz.out
+g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -I./ -o fuzz.out 
 ```
 
 Example of DB:
