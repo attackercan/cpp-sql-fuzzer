@@ -1,8 +1,19 @@
 # CPP-SQL-FUZZER
 
-Compile:  
+Compile MySQL:  
 ```bash
 g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o fuzz.out 
+```
+
+Install sqlapi++:  
+Copy SQLAPI/lib/* to /usr/local/lib/*  
+```bash
+LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH
+```
+Compile:  
+```bash
+g++ main.cpp -I./include -L./lib -lsqlapi -ldl
 ```
 
 Example of DB:
