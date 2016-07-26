@@ -102,8 +102,19 @@ void StringExplode(string str, string separator, vector<string>* results)
     }
 }
 
-int main()
+int main(int argc, char* argv[])
 {
+    string sql_input;
+    if (argc > 1)
+    {
+    	sql_input = string(argv[1]);
+    } else
+    {
+    	cout << "Please input fuzzing string with 1 [XXX] input, e.g. SELECT[XXX]1 FROM tbl1";
+	return 0;
+    }
+
+
     MYSQL* connect;
     connect = mysql_init(NULL);
 
@@ -150,7 +161,7 @@ int main()
                 FinalFuzzWordUnicode += "%" + dec2hex(tmpk);
                 // FinalFuzzWordUnicode += "%" + dec2hex(tmpl);
 
-                string sql = "select[XXX]1 from tbl1";
+                string sql = sql_input;
                 string sql_unicode = sql;
 
                 replace(sql, "[XXX]", FinalFuzzWord);
