@@ -1,11 +1,13 @@
 # CPP-SQL-FUZZER
 
 Compile:  
-`g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o fuzz.out`
-
-Example of resulting DB:
+```bash
+g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o fuzz.out
 ```
-mysql> describe good;
+
+Example of DB:
+```bash
+mysql> DESCRIBE good;
 +----------------+---------------+------+-----+---------+----------------+
 | Field          | Type          | Null | Key | Default | Extra          |
 +----------------+---------------+------+-----+---------+----------------+
@@ -18,7 +20,7 @@ mysql> describe good;
 ```
 
 Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](https://github.com/client9/libinjection) with only modification:
-```
+```c++
 printf("%s:%d", fingerprint,issqli);
 ```
 Please feel free to re-compile libinjection updates manually.
