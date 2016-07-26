@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
     	sql_input = string(argv[1]);
     } else
     {
-    	cout << "Please input fuzzing string with 1 [XXX] input, e.g. SELECT[XXX]1 FROM tbl1";
+    	cout << "Please input fuzzing string with [XXX] input, e.g. ./mysql_fuzz.out 'SELECT[XXX]1 FROM tbl1'\r\n";
 	return 0;
     }
 
