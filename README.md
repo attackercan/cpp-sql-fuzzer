@@ -1,22 +1,22 @@
 # CPP-SQL-FUZZER
 
-Compile MySQL:  
+###Compile MySQL version:  
 ```bash
 g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o fuzz.out 
 ```
 
-Install sqlapi++:  
-Copy SQLAPI/lib/* to /usr/local/lib/*  
+###Compile SQLApi version:    
+Install SQLApi by copying SQLAPI/lib/* to /usr/local/lib/*  
 ```bash
 LD_LIBRARY_PATH=/usr/local/lib
 export LD_LIBRARY_PATH
 ```
-Compile:  
+And finally compile:  
 ```bash
 g++ main.cpp -I./include -L./lib -lsqlapi -ldl
 ```
 
-Example of DB:
+###Example of output DB:
 ```bash
 mysql> DESCRIBE good;
 +----------------+---------------+------+-----+---------+----------------+
@@ -34,4 +34,6 @@ Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](ht
 ```c++
 printf("%s:%d", fingerprint, issqli);
 ```
-Please feel free to re-compile libinjection updates manually.
+PS: Please feel free to re-compile libinjection with updates manually.
+
+Vladimir Ivanov @httpsonly
