@@ -17,17 +17,15 @@ g++ main.cpp -I./include -lsqlapi -ldl -o sqlapi_fuzz.out
 ```
 
 ###Example of output DB:
-```bash
-mysql> DESCRIBE good;
-+----------------+---------------+------+-----+---------+----------------+
-| Field          | Type          | Null | Key | Default | Extra          |
-+----------------+---------------+------+-----+---------+----------------+
-| id             | int(100)      | NO   | PRI | NULL    | auto_increment |
-| vector         | varchar(1000) | NO   |     | NULL    |                |
-| unicode_vector | varchar(1000) | NO   |     | NULL    |                |
-| libinj_token   | varchar(10)   | NO   |     | NULL    |                |
-| libinj_isSQLi  | int(1)        | NO   |     | NULL    |                |
-+----------------+---------------+------+-----+---------+----------------+
+```sql
+CREATE TABLE `good` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `vector` varchar(1000) NOT NULL,
+  `unicode_vector` varchar(1000) NOT NULL,
+  `libinj_token` varchar(10) NOT NULL,
+  `libinj_isSQLi` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MEMORY AUTO_INCREMENT=0 DEFAULT CHARSET=latin1
 ```
 
 Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](https://github.com/client9/libinjection) with only modification:
