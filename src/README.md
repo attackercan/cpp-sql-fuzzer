@@ -2,6 +2,7 @@
 ```bash
 g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o mysql_fuzz.out 
 ```
+***
 
 ###Compile [SQLApi.h](http://www.sqlapi.com/Download/index.html) version:    
 Install SQLApi by copying SQLAPI/lib/* to /usr/local/lib/*  
@@ -13,7 +14,7 @@ And finally compile:
 ```bash
 g++ main.cpp -I./include -lsqlapi -ldl -o sqlapi_fuzz.out 
 ```
-
+***
 ###Example of output DB:
 ```sql
 CREATE TABLE `good` (
@@ -31,5 +32,3 @@ Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](ht
 printf("%s:%d", fingerprint, issqli);
 ```
 PS: Please feel free to re-compile libinjection with updates manually.
-
-Vladimir Ivanov @httpsonly
