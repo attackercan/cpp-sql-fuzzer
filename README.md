@@ -21,6 +21,6 @@ mysql> DESCRIBE good;
 
 Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](https://github.com/client9/libinjection) with only modification:
 ```c++
-printf("%s:%d", fingerprint,issqli);
+printf("%s:%d", fingerprint, issqli);
 ```
 Please feel free to re-compile libinjection updates manually.
