@@ -21,4 +21,3 @@
 |  column from | `'a'=\` |
 |  from table | `.` |
 
-Vladimir Ivanov @httpsonly
