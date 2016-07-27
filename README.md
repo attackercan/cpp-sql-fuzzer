@@ -1,5 +1,8 @@
 # CPP-SQL-FUZZER
 
+Tables of allowed symbols in different inputs of SQL expression, result of parsing fuzz tables.
+Contribution is highly welcomed.
+
 ## MySQL
 | Injection | Allowed symbols |
 |---|---|
@@ -8,8 +11,6 @@
 | column from:  |  ``` ``, '', "", 1., 1e1, 1.1, %"", %'', .1, %\N, *"", *'', =.0, <.0, >.0, ="", ='', ^"", |"", |'' ``` |
 | from table:  |  `.%20, %20.` |
 | table limit:  |  ``` `` ``` |
-
-
 
 ## MSSQL  
 | Injection | Allowed symbols |
