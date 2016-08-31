@@ -26,10 +26,21 @@ CREATE TABLE `good` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `vector` varchar(1000) NOT NULL,
   `unicode_vector` varchar(1000) NOT NULL,
+  `mysql_message` varchar(1000) NOT NULL,
   `libinj_token` varchar(10) NOT NULL,
   `libinj_isSQLi` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MEMORY AUTO_INCREMENT=0 DEFAULT CHARSET=latin1
+) AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `mysqlErrors` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `vector` varchar(1000) NOT NULL,
+  `unicode_vector` varchar(1000) NOT NULL,
+  `mysql_message` varchar(1000) NOT NULL,
+  `libinj_token` varchar(10) NOT NULL,
+  `libinj_isSQLi` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 ```
 
 Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](https://github.com/client9/libinjection) with only modification:
