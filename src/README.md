@@ -42,7 +42,12 @@ CREATE TABLE `mysqlErrors` (
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 ```
-
+###Watch/parse output examples:
+```sql
+TRUNCATE good; TRUNCATE mysqlErrors;
+SELECT * FROM mysqlErrors ORDER BY id DESC LIMIT 0,10; SELECT * FROM good ORDER BY id DESC LIMIT 0,10;
+```
+***
 Here, `detect` binary is a compiled `src/example1.c` from [libinjection repo](https://github.com/client9/libinjection) with only modification:
 ```c++
 printf("%s:%d", fingerprint, issqli);
