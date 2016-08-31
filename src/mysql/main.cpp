@@ -1,3 +1,5 @@
+// Fuzz 1 injection with 3 symbols, e.g. SELECT[XXX]1 FROM test;
+
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
