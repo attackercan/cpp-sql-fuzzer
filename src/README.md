@@ -1,3 +1,8 @@
+###Install libraries (if not already)
+```bash
+apt-get install libmysqlclient-dev
+```
+
 ###Compile MySQL.h version:  
 ```bash
 g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o mysql_fuzz.out 
