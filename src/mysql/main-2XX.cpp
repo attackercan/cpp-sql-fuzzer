@@ -139,7 +139,7 @@ bool WriteSQLToDB(MYSQL* connect, string sql, string sql_unicode, string db_name
     if (calcLibinj == true) {
         string thisstring = parse_libinjection(escaped_sql_string);
         StringExplode(thisstring, ":", &R);
-        sql_add = "INSERT INTO " + db_name + " (id, vector, unicode_vector, mysql_message "
+        sql_add = "INSERT INTO " + db_name + " (id, vector, unicode_vector, mysql_message, "
                                              "libinj_token, libinj_isSQLi) VALUES (NULL, '"
             + escaped_sql_string + "', '" + escaped_sql_unicode_string + "', '" + mysqlMessage + "', '" + R[0] + "', '" + R[1] + "');";
     }
