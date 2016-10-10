@@ -24,6 +24,7 @@ CREATE TABLE `mysqlErrors` (
 '
 
 git clone https://github.com/attackercan/cpp-sql-fuzzer
-cd cpp-sql-fuzzer
 
-g++ main.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o mysql_fuzz.out
+g++ cpp-sql-fuzzer/src/mysql/main-2XX.cpp -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -o mysql_fuzz.out
+
+echo "Compiled successfully! Use: ./mysql_fuzz.out"
